@@ -1,3 +1,7 @@
+Modification to Chronometer, by Oscar Mesa.
+
+Best wishes for the author Wim Barelds.
+
 > Unfortunately I am limited in what I can do with these pages. For better formatted documentation, see: http://git.wimbarelds.nl/TimeCircles/readme.php
 
 # TimeCircles documentation
@@ -87,11 +91,16 @@ The time option is actually a group of options that allows you to control the op
 * **text:** Determines the text shown below the time. Useful for use on non-English websites
 * **color:** Determines the color of the foreground circle of the time unit
 
+	//Idiom and color change example
     $(".example").TimeCircles({ time: {
-        Days: { color: "#C0C8CF" },
-        Hours: { color: "#C0C8CF" },
-        Minutes: { color: "#C0C8CF" },
-        Seconds: { color: "#C0C8CF" }
+        Days: { show: true, text: "DIAS" ,
+				color: "#5eebd4"},
+				Hours: { show: true, text: "HORAS" ,
+				color: "#34bced"},
+				Minutes: { show: true, text: "MINUTOS",
+				color: "#3468ed" },
+				Seconds: { show: true, text: "SEGUNDOS",
+				color: "#f66235" }
     }});
 
 ## Functions
@@ -102,21 +111,46 @@ Before we go into what each function does however, it should be pointed out how 
 
 TimeCircles functions themselves (with the exception of the `end()` function) will return the TimeCircles object. This allows you to chain several functions into each other. IE: You could chain `start()` straight into `addEventListener(callback)`.
 
-### start() and stop()
+### start(), stop() and restart()
 
 These are the most basic functions provided. They allow you to temporarily stop TimeCircles. This is especially useful when you're using TimeCircles as a sort of stopwatch (ie: counting down a certain number of seconds). If you're using TimeCircles to count down to a certain point in the future, obviously pausing TimeCircles isn't going to stop time itself.
 
 **Html**
 
-    <div class="example stopwatch" data-timer="900"></div>
-    <button class="btn btn-success start">Start</button>
-    <button class="btn btn-success start">Stop</button>
+    <div class="someTimer crono_style" data-timer="0"></div>
+    <div class="custom_circle_button">
+		<a id="btnStart1"><span id="p1btn" class="icon-play-3 btn_icon"></span></a>			
+	</div>
+	<div class="custom_circle_button">
+		<a id="btnReset1"><span id="r1btn" class="icon-history btn_icon"></span></a>			
+	</div>
 
 **Javascript**
-
-    $(".example").TimeCircles();
-    $(".stop").click(function(){ $(".example.stopwatch").TimeCircles().stop(); });
-    $(".start").click(function(){ $(".example.stopwatch").TimeCircles().start(); });
+	
+	var tCircles = $(".someTimer");
+	
+	$("#start_stop").click(function() {
+		if (on1){
+			on1=false;
+			
+			$("#p1btn").replaceWith("<span id='p1btn' class='icon-play-3 btn_icon'></span>");
+			tCircles.eq(0).TimeCircles().stop();					
+		}else{
+			on1=true;
+			
+			$("#p1btn").replaceWith("<span id='p1btn' class='icon-pause-2 btn_icon'></span>");
+			tCircles.eq(0).TimeCircles().start();
+		}                
+	});
+	$("#reset").click(function() {		
+		if (on1){
+			on1=false;					
+			$("#p1btn").replaceWith("<span id='p1btn' class='icon-play-3 btn_icon'></span>");
+			tCircles.eq(0).TimeCircles().restart();			
+		}else{
+			tCircles.eq(0).TimeCircles().restart();
+		}
+	});
 
 ### destroy()
 

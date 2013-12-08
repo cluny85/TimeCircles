@@ -1,0 +1,98 @@
+body {
+  
+/*  color: #333;*/  
+  background-color: rgba(223, 224, 222, 1);
+  background: rgba(223, 224, 222, 1);
+  color: rgba(0, 0, 0, 1);
+}
+/*
+ * Botones custom
+*/
+.custom_circle_button{
+	display:inline-block;
+	text-align:justify;
+	width:82px;
+}
+.custom_circle_button a {
+	margin-right: 30px;
+	width: 64px;
+	height: 26px;
+	display: inline-block;
+	position: relative;
+	line-height: 27px;
+	background-color: #eaeaea;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eaeaea));
+	background-image: -webkit-linear-gradient(top, #f6f6f6, #eaeaea);
+	background-image: -moz-linear-gradient(top, #f6f6f6, #eaeaea); 
+	background-image: -ms-linear-gradient(top, #f6f6f6, #eaeaea); 
+	background-image: -o-linear-gradient(top, #f6f6f6, #eaeaea);
+	background-image: linear-gradient(top, #f6f6f6, #eaeaea);
+	-moz-border-radius: 32px;
+	-webkit-border-radius: 32px;
+	border-radius: 32px;
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .25), 0 2px 3px rgba(0, 0, 0, .1);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .25), 0 2px 3px rgba(0, 0, 0, .1);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .25), 0 2px 3px rgba(0, 0, 0, .1);
+	margin-left:10px;
+	margin-bottom:10px;
+}
+
+.btn_icon{
+	padding-left:24px;
+	font-size:18px;
+}
+
+.custom_circle_button a:active {
+	top: 1px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eaeaea), to(#f6f6f6));
+	background-image: -webkit-linear-gradient(top, #eaeaea, #f6f6f6);
+	background-image: -moz-linear-gradient(top, #eaeaea, #f6f6f6); 
+	background-image: -ms-linear-gradient(top, #eaeaea, #f6f6f6); 
+	background-image: -o-linear-gradient(top, #eaeaea, #f6f6f6);
+	background-image: linear-gradient(top, #eaeaea, #f6f6f6);
+}
+
+.custom_circle_button a::before{
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: -8px;
+		right: -8px;
+		bottom: -8px;
+		left: -8px;
+		background-color: #eaeaea;
+		-moz-border-radius: 140px;
+		-webkit-border-radius: 140px;
+		border-radius: 140px;
+	opacity: 0.5;		
+}
+
+.custom_circle_button a:active::before {
+	top: -9px;
+}
+
+.custom_circle_button a:hover::before { opacity: 1; }
+
+.custom_circle_button a.twitter:hover::before {
+	background-color: #c6f0f8;
+}
+
+.custom_circle_button a.facebook:hover::before {
+	background-color: #dae1f0;
+}
+
+.custom_circle_button a.dribble:hover::before {
+	background-color: #fadae6;
+}
+
+.custom_circle_button a.rss:hover::before {
+	background-color: #f8ebb6;
+}
+
+.ico_play img { 
+	max-width:50%;
+	margin-left:16px; 
+	margin-bottom:3px;
+}
+
+.custom_circle_button a img { border: 0; }

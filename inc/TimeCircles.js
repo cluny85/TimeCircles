@@ -309,6 +309,15 @@
         // Stop running
         clearInterval(this.timer);
     };
+	
+	TC_Instance.prototype.restart = function() {
+		if (typeof this.data.attributes.timer === "number") {			
+            this.data.attributes.timer = 0;
+			this.data.attributes.ref_date = new Date();
+        }
+        // Stop running
+        clearInterval(this.timer);
+    };
 
     TC_Instance.prototype.destroy = function() {
         this.stop();
@@ -417,6 +426,14 @@
     TC_Class.prototype.stop = function() {
         this.foreach(function(instance) {
             instance.stop();
+        });
+        return this;
+    };
+	
+	TC_Class.prototype.restart = function() {
+        this.foreach(function(instance) {
+            instance.restart();
+			instance.updateArc();
         });
         return this;
     };
