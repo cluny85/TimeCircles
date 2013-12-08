@@ -91,7 +91,8 @@ The time option is actually a group of options that allows you to control the op
 * **text:** Determines the text shown below the time. Useful for use on non-English websites
 * **color:** Determines the color of the foreground circle of the time unit
 
-	//Idiom and color change example
+Idiom and color change example
+
     $(".example").TimeCircles({ time: {
         Days: { show: true, text: "DIAS" ,
 				color: "#5eebd4"},
@@ -100,8 +101,7 @@ The time option is actually a group of options that allows you to control the op
 				Minutes: { show: true, text: "MINUTOS",
 				color: "#3468ed" },
 				Seconds: { show: true, text: "SEGUNDOS",
-				color: "#f66235" }
-    }});
+				color: "#f66235" } }});
 
 ## Functions
 
