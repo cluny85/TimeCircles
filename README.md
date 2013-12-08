@@ -1,6 +1,6 @@
 Modification to Chronometer, by Oscar Mesa.
 
-Best wishes for the author Wim Barelds.
+Best wishes for the author Wim Barelds, https://github.com/wimbarelds
 
 > Unfortunately I am limited in what I can do with these pages. For better formatted documentation, see: http://git.wimbarelds.nl/TimeCircles/readme.php
 
